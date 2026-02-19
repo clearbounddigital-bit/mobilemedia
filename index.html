@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Are Mobile Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- HERO NAV -->
+    <nav class="hero-nav">
+      <div class="logo">We Are Mobile Media</div>
+      <a href="testimonials.html" class="hero-link">Testimonials</a>
+      </div>
+    </nav>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content fade-up">
+      <h1>
+  <span class="brand">YOUR BRAND.</span><br>
+  <span class="accent">ON THE MOVE.</span>
+</h1>
+
+      <p>
+        High-impact truck-side billboard advertising that turns everyday traffic
+        into nonstop brand attention.
+      </p>
+      <a href="book.html" class="hero-cta">Book a Campaign</a>
+    </div>
+
+    <div class="truck-wrapper">
+      <img src="images/truck-billboard.png" alt="Ad Truck">
+    </div>
+
+  </section>
+
+  <!-- MOVING BILLBOARD / TRAFFIC STRIP -->
+  <div class="traffic-strip fade-up">
+    <div class="traffic-track">
+      <span>HIGH VISIBILITY</span>
+      <span>REAL TRAFFIC</span>
+      <span>LOCAL DOMINANCE</span>
+      <span>UNMISSABLE</span>
+      <span>HIGH VISIBILITY</span>
+      <span>REAL TRAFFIC</span>
+      <span>LOCAL DOMINANCE</span>
+      <span>UNMISSABLE</span>
+      <span>HIGH VISIBILITY</span>
+      <span>REAL TRAFFIC</span>
+      <span>LOCAL DOMINANCE</span>
+      <span>UNMISSABLE</span>
+    </div>
+  </div>
+
+  <!-- CAMPAIGN OPTIONS SECTION -->
+<section class="campaign-section fade-up" style="position: relative; overflow: visible;">
+  <!-- Poster Grid Behind Everything -->
+  <div class="poster-grid-full">
+</div>
+
+  <!-- Section Heading & Subtext -->
+  <div class="campaign-header">
+
+    <h2 class="campaign-title hero-title">CAMPAIGN OPTIONS</h2>
+
+    <p>
+      Your message moves through your city everyday
+    </p>
+  </div>
+
+  <!-- Campaign Cards -->
+  <div class="campaign-options">
+    <div class="campaign-option">
+  <span class="option-scale">1 TRUCK</span>
+  <h3>Neighborhood Takeover</h3>
+  <p>1 truck focusing on a high-traffic local area to get immediate exposure.</p>
+</div>
+    <div class="campaign-option">
+  <span class="option-scale">3 TRUCKS</span>
+  <h3>Citywide Visibility</h3>
+  <p>3 trucks moving strategically through the city’s busiest routes.</p>
+</div>
+    <div class="campaign-option">
+  <span class="option-scale">5+ TRUCKS</span>
+  <h3>Regional Domination</h3>
+  <p>5+ trucks saturating multiple cities for maximum reach.</p>
+</div>
+</section>
+
+
+
+  <!-- STICKY CONTACT STRIP -->
+  <div class="contact-strip">
+    Call (612) 418-4240 to launch your campaign
+  </div>
+
+  <!-- SCROLL ANIMATION SCRIPT -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.2 });
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
+<script>
+  const options = document.querySelectorAll('.campaign-option');
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const isActive = option.classList.contains('is-active');
+
+      // Close all options
+      options.forEach(o => o.classList.remove('is-active'));
+
+      // Toggle current one
+      if (!isActive) {
+        option.classList.add('is-active');
+      }
+    });
+  });
+
+  // Close when tapping outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.campaign-option')) {
+      options.forEach(o => o.classList.remove('is-active'));
+    }
+  });
+</script>

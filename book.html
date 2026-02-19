@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Campaign - We Are Mobile Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <section class="hero-booking">
+    <nav class="hero-nav">
+      <div class="logo">We Are Mobile Media</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+
+    <div class="hero-content fade-up">
+      <h1>
+        <span class="hero-line">Launch Your Campaign.</span>
+        <span class="hero-line accent">Fast. Bold. Visible.</span>
+      </h1>
+      <p>
+        Fill out the form below and we’ll help get your message on the streets
+        where it counts.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="section fade-up">
+    <h2>Book Your Campaign</h2>
+    <form class="booking-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Campaign Type</option>
+        <option value="neighborhood">Neighborhood Takeover</option>
+        <option value="citywide">Citywide Visibility</option>
+        <option value="regional">Regional Domination</option>
+      </select>
+      <textarea placeholder="Additional Notes" rows="4"></textarea>
+      <button type="submit" class="hero-cta">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- STICKY CONTACT STRIP -->
+  <div class="contact-strip">
+    Call (555) 123-4567 to launch your campaign
+  </div>
+
+  <!-- SCROLL ANIMATION SCRIPT -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.2 });
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+<section class="section fade-up">
+  ...
+</section>
+
+</body class="bookingpage">
+</html>
